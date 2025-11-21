@@ -12,7 +12,7 @@ app.use(express.json());
 const port = process.env.PORT || 2000;
 
 // routes
-app.use("/api/user", userRoutes);
+app.use("/api/users", userRoutes);
 
 app.get("/", (req, res) => {
   //   res.status(200).json({ message: "Application is Healthy" });
