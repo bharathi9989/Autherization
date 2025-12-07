@@ -188,5 +188,3 @@ No token → 401
 Invalid token → 401
 
 Server error → 500
-
-
