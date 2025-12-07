@@ -6,6 +6,6 @@ const userRoutes = Router();
 
 userRoutes.post("/register", register);
 userRoutes.post("/login", login);
-userRoutes.get("/me", getMe);
+userRoutes.get("/me",verifyToken, getMe);
 
 export default userRoutes;

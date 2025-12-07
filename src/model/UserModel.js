@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 import bcrypt from "bcryptjs";
 
-const userSchema = Schema({
+const userSchema = new Schema({
   username: {
     type: String,
     required: true,
@@ -17,14 +17,16 @@ const userSchema = Schema({
   },
 });
 
-// --- HASH PASSWORD BEFORE SAVE ---//
-
+// --- HASH PASSWORD BEFORE SAVE ---
 userSchema.pre("save", async function (next) {
+  // Only hash if the password was modified
   if (!this.isModified("password")) return next();
 
-  const salt = await bcrypt.genSalt(Number(process.env.SALT));
+  const saltRounds = Number(process.env.SALT) || 10; // safe fallback
+  const salt = await bcrypt.genSalt(saltRounds);
+
   this.password = await bcrypt.hash(this.password, salt);
-  const hashedPassword = this.password;
+
   next();
 });
 
