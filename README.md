@@ -170,6 +170,8 @@ Headers, body, and example responses saved for each
 
 You can publish documentation via Postman → View in Web → Publish.
 
+URL for published documentation :
+
 https://documenter.getpostman.com/view/48296551/2sB3dPTWWV
 
 🧾 Error Handling
