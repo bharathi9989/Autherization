@@ -1,4 +1,4 @@
-JWT Authentication API (Node.js + Express + MongoDB)
+# 🚀 JWT Authentication API (Node.js + Express + MongoDB)
 
 A clean, production-style JWT Authentication and Authorization system built using Node.js, Express, MongoDB (Mongoose), and tested using Postman.
 
@@ -10,7 +10,7 @@ User Registration (with hashed password)
 
 User Login (returns JWT)
 
-Protected Route (/getMe)
+Protected Route (/me)
 
 JWT verification middleware
 
@@ -101,7 +101,7 @@ Success Response:
 
 3. Get Logged In User (Protected)
 
-GET /api/users/login/:\_id
+GET /api/users/me
 
 Requires header:
 
@@ -113,6 +113,7 @@ Success Response:
 "message": "User fetched successfully",
 "user": {
 "id": "<id>",
+"username": "velu",
 "email": "boss@example.com"
 }
 }
@@ -187,3 +188,5 @@ No token → 401
 Invalid token → 401
 
 Server error → 500
+
+
